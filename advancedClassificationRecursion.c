@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "NumClass.h"
+#include <math.h>
 
 
 int size1(int num, int answer) //count how many digits the number have (recursive)
@@ -10,14 +11,6 @@ int size1(int num, int answer) //count how many digits the number have (recursiv
     }
     answer++;
     return size1(num/10, answer);
-}
-
-int power(int base, int a) //return base^a
-{
-    if (a != 0)
-        return (base * power(base, a - 1));
-    else
-        return 1;
 }
 
 int reversedNum1(int num, int answer) //recive number and return the same number written backword (recursive).
@@ -38,7 +31,7 @@ int recursiveIsArmstrong(int num, int digits, int sum) //return the sum of the n
     {
         return sum;
     }
-    sum = sum + power(num%10, digits);
+    sum = sum + pow((num%10), digits);
     num = num/10;
     return recursiveIsArmstrong(num, digits, sum);
 }
