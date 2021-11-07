@@ -25,7 +25,7 @@ int main()
             printf(" %d",i);
         }
     }
-    printf("\nThe Palindromes numbers are:");
+    printf("\nThe Palindromes are:");
     for(i=min; i<=max; i++)
     {
         if(isPalindrome(i) == 1)
