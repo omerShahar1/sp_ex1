@@ -2,19 +2,14 @@
 #include "NumClass.h"
 
 
-int size(int num) //count how many digits the number have (recursive)
+int size1(int num, int answer) //count how many digits the number have (recursive)
 {
-    static int count=0;
-     
-    if(num>0)
+    if(num==0)
     {
-        count++;
-        countDigits(num/10);
+        return answer;
     }
-    else
-    {
-        return count;
-    }
+    answer++;
+    return size(num/10, answer);
 }
 
 int power(int base, int a) //return base^a
@@ -50,7 +45,7 @@ int recursiveIsArmstrong(int num, int digits, int sum) //return the sum of the n
 
 int isArmstrong(int num) //return 1 if num is armstrong number and 0 if not
 {
-    int digits = size(num);
+    int digits = size1(num, 0);
     int sum = recursiveIsArmstrong(num, digits, 0);
     if(num == sum)
     {
