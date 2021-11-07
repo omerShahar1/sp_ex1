@@ -50,7 +50,7 @@ int recursiveIsArmstrong(int num, int digits, int sum) //return the sum of the n
 
 int isArmstrong(int num) //return 1 if num is armstrong number and 0 if not
 {
-    int digits = size(num, 0);
+    int digits = size(num);
     int sum = recursiveIsArmstrong(num, digits, 0);
     if(num == sum)
     {
