@@ -15,15 +15,15 @@ loopd: libclassloops.so
 
 #make mains
 mains: $(MAIN) libclassrec.a
-	$(CC) $(FLAGS) -o mains $(MAIN) libclassrec.a
+	$(CC) $(FLAGS) -o mains $(MAIN) libclassrec.a -lm
 
 #make maindloop
 maindloop: $(MAIN) libclassloops.so
-	$(CC) $(FLAGS) -o maindloop $(MAIN) ./libclassloops.so
+	$(CC) $(FLAGS) -o maindloop $(MAIN) ./libclassloops.so -lm
 
 #make maindrec
 maindrec: $(MAIN) libclassrec.so
-	$(CC) $(FLAGS) -o maindrec $(MAIN) ./libclassrec.so
+	$(CC) $(FLAGS) -o maindrec $(MAIN) ./libclassrec.so -lm
 
 
 #make loopd
@@ -44,13 +44,13 @@ libclassrec.a: $(BASIC) $(RECURSION)
 
 
 basicClassification.o: basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c basicClassification.c
+	$(CC) $(FLAGS) -c basicClassification.c -lm
 
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationLoop.c
+	$(CC) $(FLAGS) -c advancedClassificationLoop.c -lm
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
+	$(CC) $(FLAGS) -c advancedClassificationRecursion.c -lm
 
 main.o: main.c NumClass.h  
 	$(CC) $(FLAGS) -c main.c 
