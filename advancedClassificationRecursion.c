@@ -9,7 +9,7 @@ int size1(int num, int answer) //count how many digits the number have (recursiv
         return answer;
     }
     answer++;
-    return size(num/10, answer);
+    return size1(num/10, answer);
 }
 
 int power(int base, int a) //return base^a
@@ -20,7 +20,7 @@ int power(int base, int a) //return base^a
         return 1;
 }
 
-int reversedNum(int num, int answer) //recive number and return the same number written backword (recursive).
+int reversedNum1(int num, int answer) //recive number and return the same number written backword (recursive).
 {
     if(num==0)
     {
@@ -29,7 +29,7 @@ int reversedNum(int num, int answer) //recive number and return the same number 
     answer = answer * 10;
     answer = answer + (num % 10);
     num = num/10;
-    return reversedNum(num, answer);
+    return reversedNum1(num, answer);
 }
 
 int recursiveIsArmstrong(int num, int digits, int sum) //return the sum of the n power of the digits (recursive)
@@ -56,7 +56,7 @@ int isArmstrong(int num) //return 1 if num is armstrong number and 0 if not
 
 int isPalindrome(int num) //return 1 if num is palindrome and 0 if not
 {
-    int reverse = reversedNum(num, 0);
+    int reverse = reversedNum1(num, 0);
     if(reverse == num)
     {
         return 1;
