@@ -6,7 +6,12 @@ LOOP=advancedClassificationLoop.o
 RECURSION=advancedClassificationRecursion.o
 FLAGS= -Wall -g
 
-all: libclassloops.a libclassloops.so libclassrec.a libclassrec.so mains maindloop maindrec
+all: loops recursives recursived loopd mains maindloop maindrec
+
+loops: libclassloops.a 
+recursives: libclassrec.a
+recursived: libclassrec.so
+loopd: libclassloops.so 
 
 #make mains
 mains: $(MAIN) libclassrec.a
@@ -50,7 +55,7 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 main.o: main.c NumClass.h  
 	$(CC) $(FLAGS) -c main.c 
 
-.PHONY: clean all
+.PHONY: clean
 
 clean:
 	rm -f main.o basicClassification.o advancedClassificationLoop.o advancedClassificationRecursion.o libclassrec.a libclassloops.a libclassrec.so libclassloops.so maindrec maindloop mains
