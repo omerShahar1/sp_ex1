@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "NumClass.h"
+#include <math.h>
 
 int reversedNum(int num) //recive number and return the same number written backword.
 {
@@ -9,16 +10,6 @@ int reversedNum(int num) //recive number and return the same number written back
         answer = answer*10;
         answer = answer + (num % 10);
         num = num/10;
-    }
-    return answer;
-}
-
-int power(int base, int a) //return base^a
-{
-    int i, answer=1;
-    for(i=0; i<a; i++)
-    {
-        answer = answer*base;
     }
     return answer;
 }
@@ -39,7 +30,7 @@ int isArmstrong(int num) //return 1 if num is armstrong number and 0 if not
     int sum=0, value=num, digits=size(num);
     while(value != 0)
     {
-        sum = sum + power((value%10), digits);
+        sum = sum + pow((value%10), digits);
         value = value/10;
     }
     
