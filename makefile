@@ -14,11 +14,11 @@ mains: $(MAIN) libclassrec.a
 
 #make maindloop
 maindloop: $(MAIN) libclassloops.so
-	$(CC) $(FLAGS) -o maindloop $(MAIN) libclassloops.so
+	$(CC) $(FLAGS) -o maindloop $(MAIN) ./libclassloops.so
 
 #make maindrec
 maindrec: $(MAIN) libclassrec.so
-	$(CC) $(FLAGS) -o maindrec $(MAIN) libclassrec.so
+	$(CC) $(FLAGS) -o maindrec $(MAIN) ./libclassrec.so
 
 
 #make loopd
