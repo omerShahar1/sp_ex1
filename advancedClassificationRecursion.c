@@ -2,14 +2,19 @@
 #include "NumClass.h"
 
 
-int size(int num, int answer) //count how many digits the number have (recursive)
+int size(int num) //count how many digits the number have (recursive)
 {
-    if(num==0)
+    static int count=0;
+     
+    if(num>0)
     {
-        return answer;
+        count++;
+        countDigits(num/10);
     }
-    answer++;
-    return size(num/10, answer);
+    else
+    {
+        return count;
+    }
 }
 
 int power(int base, int a) //return base^a
