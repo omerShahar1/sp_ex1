@@ -39,7 +39,7 @@ int isArmstrong(int num) //return 1 if num is armstrong number and 0 if not
     int sum=0, value=num, digits=size(num);
     while(value != 0)
     {
-        sum = sum + power(value%10, digits);
+        sum = sum + power((value%10), digits);
         value = value/10;
     }
     
